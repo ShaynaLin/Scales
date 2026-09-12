@@ -1,11 +1,21 @@
 void setup() {
-  size(500, 500);  //feel free to change the size
-  noLoop(); //stops the draw() function from repeating
+  size(400, 400);
+   noLoop();
 }
 void draw() {
-  //your code here
+  for(int y = 0; y < 400; y = y +40)
+  for(int x = 0; x < 400; x = x +30)
+  pattern (x,y);
 }
-void scale(int x, int y) {
-  //your code here
+void pattern(int x, int y) {
+  int diam = 0;
+  float r = 0;
+  noFill();
+  while (diam < 30) {
+  stroke (r,0,r);
+  rect(x,y,diam,diam);
+  ellipse(x+15,y+30,diam+6,diam+6);
+  diam++;
+  r += 255/30.0;
 }
-
+}
